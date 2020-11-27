@@ -9,8 +9,9 @@ var User = new Schema({
     subscriber_number: {
         type:String,
         required:true
-    },
-        timestamps:true
+    }
+}, {
+    timestamps:true
 });
 
 module.exports = mongoose.model('User', User);

@@ -1,10 +1,10 @@
 var express = require('express');
 var router = express.Router();
-const Evacs = require('../models/evac');
+const Evac = require('../models/evac');
 
 router.route('/')
 .get((req,res,next) => {
-    Evacs.find({})
+    Evac.find({})
     .then((evacs) => {
         res.statusCode = 200;
         res.setHeader('Content-Type', 'application/json');
@@ -13,7 +13,7 @@ router.route('/')
     .catch((err) => next(err));
 })
 .post((req, res, next) => {
-    Evacs.create(req.body)
+    Evac.create(req.body)
     .then((evacs) => {
         console.log('Evacuation Area Created ', evacs);
         res.statusCode = 200;
@@ -27,7 +27,7 @@ router.route('/')
     res.end('PUT operation not supported on /evacs');
 })
 .delete((req, res, next) => {
-    Evacs.remove({})
+    Evac.remove({})
     .then((resp) => {
         res.statusCode = 200;
         res.setHeader('Content-Type', 'application/json');
@@ -38,7 +38,7 @@ router.route('/')
 
 router.route('/:evacId')
 .get((req,res,next) => {
-    Evacs.findById(req.params.evacId)
+    Evac.findById(req.params.evacId)
     .then((evacs) => {
         res.statusCode = 200;
         res.setHeader('Content-Type', 'application/json');
@@ -52,7 +52,7 @@ router.route('/:evacId')
     res.end('POST operation not supported on /evacs/'+ req.params.evacId);
 })
 .put((req, res, next) => {
-    Evacs.findByIdAndUpdate(req.params.evacId, {
+    Evac.findByIdAndUpdate(req.params.evacId, {
         $set: req.body
     }, { new: true })
     .then((evacs) => {
@@ -63,7 +63,7 @@ router.route('/:evacId')
     .catch((err) => next(err));
 })
 .delete((req, res, next) => {
-    Evacs.findByIdAndRemove(req.params.evacId)
+    Evac.findByIdAndRemove(req.params.evacId)
     .then((resp) => {
         res.statusCode = 200;
         res.setHeader('Content-Type', 'application/json');
