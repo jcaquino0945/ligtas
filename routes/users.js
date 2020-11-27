@@ -12,9 +12,35 @@ router.route('/')
   .catch((err) => next(err));
 })
 .post((req,res,next) => {
-  res.statusCode = 200;
-  res.setHeader('Content-Type', 'application/json');
+  Users.deleteOne({access_token:req.query.access_token, subscriber_number:req.query.subscriber_number}).then((user) => { 
+    res.statusCode = 200;
+    res.setHeader('Content-Type', 'application/json');
+    console.log(user)
+}, (err) => next(err))
+.catch((err) => next(err));
 })
+
+router.route('/list') //display all users in db dev purposes only
+.get((req,res,next) => {
+  Users.find({})
+  .then((users) => {
+      res.statusCode = 200;
+      res.setHeader('Content-Type', 'application/json');
+      res.json(users);
+  }, (err) => next(err))
+  .catch((err) => next(err));
+})
+
+router.route('/clear') //delete all DANGER  dev purposes only
+.delete((req, res, next) => {
+  Users.remove({})
+  .then((resp) => {
+      res.statusCode = 200;
+      res.setHeader('Content-Type', 'application/json');
+      res.json(resp);
+  }, (err) => next(err))
+  .catch((err) => next(err));    
+});
 /*
   if (!req.query.code) {
     Users.create(res.json(user)).then((dish) => {
