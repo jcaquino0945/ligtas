@@ -6,7 +6,6 @@ const path = require('path');
 router.route('/')
 .get((req,res,next) => {
   Users.create({access_token:req.query.access_token, subscriber_number:req.query.subscriber_number}).then((user) => {
-    console.log('User Created ', user);
         res.statusCode = 200;
         res.setHeader('Content-Type', 'application/json');
   }, (err) => next(err))
