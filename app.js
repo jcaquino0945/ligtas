@@ -10,7 +10,7 @@ var FileStore = require('session-file-store')(session);
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-var evacsRouter = require('./routes/ecavRoute');
+//var evacsRouter = require('./routes/ecavRoute');
 var app = express();
 
 const mongoose = require('mongoose');
@@ -45,7 +45,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 app.use('/', indexRouter);
-app.use('/evacs', evacsRouter);
+//app.use('/evacs', evacsRouter);
 app.use('/users', usersRouter);
 
 app.use(express.static(path.join(__dirname, 'public')));
