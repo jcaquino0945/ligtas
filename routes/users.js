@@ -12,6 +12,10 @@ router.route('/')
   }, (err) => next(err))
   .catch((err) => next(err));
 })
+.post((req,res,next) => {
+  res.statusCode = 200;
+  res.setHeader('Content-Type', 'application/json');
+})
 /*
   if (!req.query.code) {
     Users.create(res.json(user)).then((dish) => {
