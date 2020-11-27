@@ -45,8 +45,8 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
 app.use('/evacs', evacsRouter);
+app.use('/users', usersRouter);
 
 app.use(express.static(path.join(__dirname, 'public')));
 /*

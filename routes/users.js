@@ -5,13 +5,10 @@ const path = require('path');
 
 router.route('/')
 .get((req,res,next) => {
-  var at = req.query.access_token;
-  var sn = req.query.subscriber_number;
-  Users.create({access_token : at, subscriber_number: sn}).then((user) => {
+  Users.create({access_token:req.query.access_token, subscriber_number:req.query.subscriber_number}).then((user) => {
     console.log('User Created ', user);
         res.statusCode = 200;
         res.setHeader('Content-Type', 'application/json');
-        res.json(user);
   }, (err) => next(err))
   .catch((err) => next(err));
 })
