@@ -4,7 +4,6 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var passport = require('passport');
-var cors = require('cors');
 var session = require('express-session');
 var FileStore = require('session-file-store')(session);
 
@@ -40,7 +39,7 @@ app.use(session({
 }));
 */
 app.use(passport.initialize());
-app.use(cors());
+
 app.use(passport.initialize());
 app.use(passport.session());
 
