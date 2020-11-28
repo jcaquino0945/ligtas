@@ -39,10 +39,6 @@ router.post('/signup', (req, res, next) => {
     });
   });
 
-  router.route('/login')
-.get((req,res,next) => {
-  res.redirect('/user'); 
-})
   router.post('/login', passport.authenticate('local'), (req, res) => {
     res.statusCode = 200;
     res.setHeader('Content-Type', 'application/json');
