@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 const bodyParser = require('body-parser');
+const path = require('path');
 
 const Admin = require('../models/admin');
 var passport = require('passport');
