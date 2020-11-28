@@ -54,7 +54,7 @@ __webpack_require__.r(__webpack_exports__);
 const routes = [
     { path: '', component: _home_home_component__WEBPACK_IMPORTED_MODULE_2__["HomeComponent"] },
     { path: 'evac', component: _evac_evac_component__WEBPACK_IMPORTED_MODULE_3__["EvacComponent"] },
-    { path: 'admin/login', component: _login_login_component__WEBPACK_IMPORTED_MODULE_6__["LoginComponent"] },
+    { path: 'admin', component: _login_login_component__WEBPACK_IMPORTED_MODULE_6__["LoginComponent"] },
     { path: 'dashboard', component: _dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_7__["DashboardComponent"] },
     { path: 'evacDetail/:id', component: _evacdetail_evacdetail_component__WEBPACK_IMPORTED_MODULE_5__["EvacdetailComponent"] },
     { path: '', redirectTo: '/', pathMatch: 'full' },
