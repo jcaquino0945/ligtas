@@ -52,6 +52,7 @@ app.use('/', indexRouter);
 app.use('/evacs', evacsRouter);
 app.use('/users', usersRouter);
 app.use('/admin', adminRouter);
+app.use('/dashboard', dashboard);
 //app.use(express.static(path.join(__dirname, 'public')));
 
 
@@ -68,7 +69,7 @@ function auth (req, res, next) {
   }
 }
 app.use(auth);
-app.use('/dashboard', dashboard);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
