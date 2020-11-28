@@ -36,6 +36,17 @@ router.route('/')
     .catch((err) => next(err));    
 });
 
+router.route('/available')
+.get((req,res,next) => {
+    Evac.find({availability:true})
+    .then((evacs) => {
+        res.statusCode = 200;
+        res.setHeader('Content-Type', 'application/json');
+        res.json(evacs);
+    }, (err) => next(err))
+    .catch((err) => next(err));
+})
+
 router.route('/:evacId')
 .get((req,res,next) => {
     Evac.findById(req.params.evacId)
