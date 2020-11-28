@@ -47,12 +47,13 @@ app.use(passport.initialize());
 app.use(passport.initialize());
 app.use(passport.session());
 
+app.use(express.static(path.join(__dirname, 'dist')));
 app.use('/', indexRouter);
 app.use('/evacs', evacsRouter);
 app.use('/users', usersRouter);
 app.use('/admin', adminRouter);
+//app.use(express.static(path.join(__dirname, 'public')));
 
-app.use(express.static(path.join(__dirname, 'public')));
 
 function auth (req, res, next) {
   console.log(req.user);
