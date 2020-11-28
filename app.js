@@ -10,7 +10,10 @@ var FileStore = require('session-file-store')(session);
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-//var evacsRouter = require('./routes/ecavRoute');
+var evacsRouter = require('./routes/ecavRoute');
+var adminRouter = require('./routes/adminRoute');
+var dashboard = require('./routes/dashboard');
+
 var app = express();
 
 const mongoose = require('mongoose');
@@ -30,7 +33,7 @@ app.set('view engine', 'jade');
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-/*
+
 app.use(session({
   name: 'session-id',
   secret: '12345-67890-09876-54321',
@@ -38,18 +41,19 @@ app.use(session({
   resave: false,
   store: new FileStore()
 }));
-*/
+
 app.use(passport.initialize());
 
 app.use(passport.initialize());
 app.use(passport.session());
 
 app.use('/', indexRouter);
-//app.use('/evacs', evacsRouter);
+app.use('/evacs', evacsRouter);
 app.use('/users', usersRouter);
+app.use('/admin', adminRouter);
 
 app.use(express.static(path.join(__dirname, 'public')));
-/*
+
 function auth (req, res, next) {
   console.log(req.user);
 
@@ -63,11 +67,8 @@ function auth (req, res, next) {
   }
 }
 app.use(auth);
+app.use('/dashboard', dashboard);
 
-app.get('/admin', function(req, res, next) {
-  res.send('respond with a admin');
-});
-*/
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
