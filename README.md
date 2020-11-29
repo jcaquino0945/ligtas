@@ -34,3 +34,13 @@ MIT Licensed 2020
 3. npm start
 4. go to http://localhost:8080/
 
+# How to use system
+1. Subscribe to us via SMS
+Text INFO to 21587354 for Globe Subscribers and 2256557354 for Other Networks
+
+2. Visit our website to see our info and evac centers
+https://ligtas-trial.herokuapp.com/
+
+3. ADMIN TAB (will limit access on future updates)
+there is an input form there and when you submit the form, ALL USERS SUBSCRIBED in the system will receive a custom message based on your input
+
