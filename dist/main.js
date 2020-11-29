@@ -936,7 +936,7 @@ EvacsService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInje
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "baseURL", function() { return baseURL; });
-const baseURL = '';
+const baseURL = 'https://ligtas-trial.herokuapp.com';
 
 
 /***/ }),
