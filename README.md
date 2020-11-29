@@ -27,3 +27,10 @@ Our Team
 4.) Allen Nidoy
 
 MIT Licensed 2020
+
+# How to install
+1. git clone https://github.com/jcaquino0945/ligtas
+2. npm install
+3. npm start
+4. go to http://localhost:8080/
+
