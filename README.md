@@ -16,6 +16,7 @@ Future Updates:
 2. Restrictions/Authorization for sensitve parts of the system (kept open for now cus of dev purposes)
 3. Weather API Integration for automation of messages when weather parameters reaches a specific value
 4. City field for users so messages can be delivered per CITY AREA
+5. Better UI/UX 
 
 Made with GlobeLabs
  
